@@ -1,0 +1,351 @@
+.radioPlayer {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 24px;
+}
+
+.playerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.trackInfo {
+  flex: 1;
+  min-width: 200px;
+}
+
+.nowPlaying {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nowPlayingLabel {
+  font-size: 0.75rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.trackDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trackTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.trackArtist {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.playerControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controlButton,
+.playButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.controlButton:hover,
+.playButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.playButton {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.progressSection {
+  flex: 2;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.timeDisplay {
+  font-size: 0.75rem;
+  color: #718096;
+  font-weight: 500;
+  min-width: 40px;
+  text-align: center;
+}
+
+.progressBar {
+  flex: 1;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.playerActions {
+  display: flex;
+  align-items: center;
+}
+
+.playlistButton {
+  background: #f7fafc;
+  border: 2px solid #e2e8f0;
+  color: #4a5568;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.playlistButton:hover {
+  border-color: #667eea;
+  background: #edf2f7;
+  color: #667eea;
+}
+
+/* Playlist */
+.playlist {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.playlistHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+.playlistHeader h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: #718096;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+.playlistItems {
+  padding: 8px 0;
+}
+
+.playlistItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.playlistItem:hover {
+  background: #f7fafc;
+  border-left-color: #667eea;
+}
+
+.playlistItemActive {
+  background: #edf2f7;
+  border-left-color: #667eea;
+}
+
+.playlistItemNumber {
+  width: 24px;
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 600;
+  text-align: center;
+}
+
+.playlistItemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.playlistItemTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.playlistItemArtist {
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.playlistItemDuration {
+  font-size: 0.75rem;
+  color: #718096;
+  min-width: 50px;
+  text-align: right;
+}
+
+.playingIndicator {
+  font-size: 1.25rem;
+  color: #667eea;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .radioPlayer {
+    padding: 12px 16px;
+  }
+
+  .playerContent {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .trackInfo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nowPlayingLabel {
+    font-size: 0.6875rem;
+  }
+
+  .trackTitle {
+    font-size: 0.875rem;
+  }
+
+  .trackArtist {
+    font-size: 0.75rem;
+  }
+
+  .progressSection {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .timeDisplay {
+    font-size: 0.6875rem;
+    min-width: 35px;
+  }
+
+  .progressBar {
+    height: 4px;
+  }
+
+  .playerControls {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .controlButton,
+  .playButton {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .playButton {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .playlistButton {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .radioPlayer {
+    padding: 10px 12px;
+  }
+
+  .playerContent {
+    gap: 10px;
+  }
+
+  .controlButton,
+  .playButton {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .playButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+  }
+}
+
