@@ -4,6 +4,10 @@
   padding: 20px;
 }
 
+[data-theme='dark'] .container {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+}
+
 .content {
   max-width: 1200px;
   margin: 0 auto;
@@ -12,6 +16,11 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   padding: 48px;
   animation: fadeIn 0.5s ease-in;
+}
+
+[data-theme='dark'] .content {
+  background: #2d3748;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
@@ -50,11 +59,19 @@
   letter-spacing: -0.02em;
 }
 
+[data-theme='dark'] .title {
+  color: #f7fafc;
+}
+
 .subtitle {
   font-size: 1.25rem;
   color: #718096;
   margin: 0;
   font-weight: 400;
+}
+
+[data-theme='dark'] .subtitle {
+  color: #a0aec0;
 }
 
 .logoutButton {
@@ -132,10 +149,20 @@
   transition: all 0.3s ease;
 }
 
+[data-theme='dark'] .sectionCard {
+  background: #1a202c;
+  border-color: #4a5568;
+}
+
 .sectionCard:hover {
   border-color: #667eea;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
   transform: translateY(-2px);
+}
+
+[data-theme='dark'] .sectionCard:hover {
+  border-color: #9f7aea;
+  box-shadow: 0 4px 12px rgba(159, 122, 234, 0.2);
 }
 
 .sectionHeader {
@@ -149,6 +176,10 @@
   color: #2d3748;
 }
 
+[data-theme='dark'] .sectionTitleWithIcon {
+  color: #f7fafc;
+}
+
 .sectionTitle {
   font-size: 1.5rem;
   font-weight: 600;
@@ -156,11 +187,19 @@
   margin: 0;
 }
 
+[data-theme='dark'] .sectionTitle {
+  color: #f7fafc;
+}
+
 .sectionDescription {
   font-size: 1rem;
   color: #4a5568;
   margin: 0 0 24px 0;
   line-height: 1.6;
+}
+
+[data-theme='dark'] .sectionDescription {
+  color: #cbd5e0;
 }
 
 .sectionButton {
@@ -191,6 +230,10 @@
   margin: 0 0 24px 0;
 }
 
+[data-theme='dark'] .recentTitle {
+  color: #f7fafc;
+}
+
 .reelsList {
   display: flex;
   flex-direction: column;
@@ -208,9 +251,19 @@
   transition: all 0.3s ease;
 }
 
+[data-theme='dark'] .reelItem {
+  background: #1a202c;
+  border-color: #4a5568;
+}
+
 .reelItem:hover {
   border-color: #667eea;
   box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+[data-theme='dark'] .reelItem:hover {
+  border-color: #9f7aea;
+  box-shadow: 0 2px 8px rgba(159, 122, 234, 0.2);
 }
 
 .reelStatus {
@@ -270,16 +323,16 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 12px;
+    padding: 8px;
   }
 
   .content {
-    padding: 24px 16px;
-    border-radius: 16px;
+    padding: 16px 12px;
+    border-radius: 12px;
   }
 
   .header {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 
   .headerTop {
@@ -288,98 +341,164 @@
   }
 
   .title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .subtitle {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
   }
 
   .logoutButton {
     width: 100%;
-    margin-top: 12px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 0.875rem;
   }
 
   .statsGrid {
     grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .statCard {
-    padding: 20px;
-  }
-
-  .statIcon {
-    font-size: 2rem;
-  }
-
-  .statNumber {
-    font-size: 1.75rem;
-  }
-
-  .sectionsGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .sectionCard {
-    padding: 24px;
-  }
-
-  .sectionTitleWithIcon {
-    gap: 8px;
-  }
-
-  .sectionTitle {
-    font-size: 1.25rem;
-  }
-
-  .sectionDescription {
-    font-size: 0.9375rem;
+    gap: 12px;
     margin-bottom: 20px;
-  }
-
-  .sectionButton {
-    width: 100%;
-    text-align: center;
-  }
-
-  .recentSection {
-    margin-top: 32px;
-  }
-
-  .recentTitle {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-  }
-
-  .reelItem {
-    padding: 12px;
-  }
-
-  .reelStatus {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    padding: 20px 12px;
-  }
-
-  .title {
-    font-size: 1.5rem;
   }
 
   .statCard {
     padding: 16px;
   }
 
+  .statIcon {
+    font-size: 1.75rem;
+  }
+
+  .statNumber {
+    font-size: 1.5rem;
+  }
+
+  .statLabel {
+    font-size: 0.8125rem;
+  }
+
+  .sectionsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
   .sectionCard {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .sectionTitleWithIcon {
+    gap: 6px;
+  }
+
+  .sectionTitle {
+    font-size: 1.125rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+  }
+
+  .sectionButton {
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+
+  .recentSection {
+    margin-top: 20px;
+  }
+
+  .recentTitle {
+    font-size: 1.125rem;
+    margin-bottom: 12px;
+  }
+
+  .reelItem {
+    padding: 10px;
+  }
+
+  .reelStatus {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 6px;
+  }
+
+  .content {
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+
+  .statsGrid {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .statCard {
+    padding: 12px;
+  }
+
+  .statIcon {
+    font-size: 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 1.25rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+
+  .sectionsGrid {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .sectionCard {
+    padding: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.8125rem;
+    margin-bottom: 10px;
+  }
+
+  .recentTitle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .reelItem {
+    padding: 8px;
+  }
+
+  .reelStatus {
+    width: 24px;
+    height: 24px;
   }
 }
 

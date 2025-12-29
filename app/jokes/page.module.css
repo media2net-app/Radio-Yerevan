@@ -211,79 +211,110 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 12px;
+    padding: 8px;
   }
 
   .content {
-    padding: 24px 16px;
-    border-radius: 16px;
+    padding: 16px 12px;
+    border-radius: 12px;
   }
 
   .header {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 
   .headerTop {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .headerActions {
     flex-direction: column;
     width: 100%;
-    gap: 8px;
-  }
-
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 0.875rem;
-  }
-
-  .backButton,
-  .logoutButton {
-    width: 100%;
-  }
-
-  .jokeCard {
-    padding: 20px 16px;
-    margin-bottom: 24px;
-  }
-
-  .question {
-    font-size: 1rem;
-  }
-
-  .answer {
-    font-size: 0.9375rem;
-  }
-
-  .navigationButtons {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .navButton,
-  .nextButton {
-    width: 100%;
-    padding: 12px 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    padding: 20px 12px;
+    gap: 6px;
   }
 
   .title {
     font-size: 1.5rem;
   }
 
+  .subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .backButton,
+  .logoutButton {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+
   .jokeCard {
     padding: 16px 12px;
+    margin-bottom: 16px;
+  }
+
+  .question {
+    font-size: 0.9375rem;
+  }
+
+  .answer {
+    font-size: 0.875rem;
+  }
+
+  .navigationButtons {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .navButton,
+  .nextButton {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 6px;
+  }
+
+  .content {
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+
+  .jokeCard {
+    padding: 12px 10px;
+    margin-bottom: 12px;
+  }
+
+  .question {
+    font-size: 0.875rem;
+  }
+
+  .answer {
+    font-size: 0.8125rem;
+  }
+
+  .navButton,
+  .nextButton {
+    padding: 8px 16px;
+    font-size: 0.8125rem;
   }
 }
 

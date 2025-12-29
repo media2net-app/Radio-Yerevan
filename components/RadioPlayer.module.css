@@ -9,6 +9,12 @@
   padding: 16px 24px;
 }
 
+[data-theme='dark'] .radioPlayer {
+  background: rgba(45, 55, 72, 0.98);
+  border-bottom-color: #4a5568;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .playerContent {
   max-width: 1400px;
   margin: 0 auto;
@@ -49,9 +55,17 @@
   color: #2d3748;
 }
 
+[data-theme='dark'] .trackTitle {
+  color: #f7fafc;
+}
+
 .trackArtist {
   font-size: 0.875rem;
   color: #718096;
+}
+
+[data-theme='dark'] .trackArtist {
+  color: #a0aec0;
 }
 
 .playerControls {
@@ -105,6 +119,10 @@
   text-align: center;
 }
 
+[data-theme='dark'] .timeDisplay {
+  color: #a0aec0;
+}
+
 .progressBar {
   flex: 1;
   height: 6px;
@@ -138,10 +156,22 @@
   transition: all 0.3s ease;
 }
 
+[data-theme='dark'] .playlistButton {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #cbd5e0;
+}
+
 .playlistButton:hover {
   border-color: #667eea;
   background: #edf2f7;
   color: #667eea;
+}
+
+[data-theme='dark'] .playlistButton:hover {
+  background: #4a5568;
+  border-color: #667eea;
+  color: #9f7aea;
 }
 
 /* Playlist */
@@ -152,6 +182,11 @@
   border-top: 1px solid #e2e8f0;
   max-height: 400px;
   overflow-y: auto;
+}
+
+[data-theme='dark'] .playlist {
+  background: #1a202c;
+  border-top-color: #4a5568;
 }
 
 .playlistHeader {
@@ -166,11 +201,20 @@
   z-index: 10;
 }
 
+[data-theme='dark'] .playlistHeader {
+  background: #1a202c;
+  border-bottom-color: #4a5568;
+}
+
 .playlistHeader h3 {
   margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
   color: #2d3748;
+}
+
+[data-theme='dark'] .playlistHeader h3 {
+  color: #f7fafc;
 }
 
 .closeButton {
@@ -184,9 +228,23 @@
   transition: all 0.3s ease;
 }
 
+[data-theme='dark'] .closeButton {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .closeButton:hover {
+  color: #f7fafc;
+  background: #4a5568;
+}
+
 .closeButton:hover {
   background: #f7fafc;
   color: #2d3748;
+}
+
+[data-theme='dark'] .closeButton:hover {
+  background: #4a5568;
+  color: #f7fafc;
 }
 
 .playlistItems {
@@ -208,9 +266,19 @@
   border-left-color: #667eea;
 }
 
+[data-theme='dark'] .playlistItem:hover {
+  background: #2d3748;
+  border-left-color: #9f7aea;
+}
+
 .playlistItemActive {
   background: #edf2f7;
   border-left-color: #667eea;
+}
+
+[data-theme='dark'] .playlistItemActive {
+  background: #4a5568;
+  border-left-color: #9f7aea;
 }
 
 .playlistItemNumber {
@@ -219,6 +287,10 @@
   color: #718096;
   font-weight: 600;
   text-align: center;
+}
+
+[data-theme='dark'] .playlistItemNumber {
+  color: #a0aec0;
 }
 
 .playlistItemInfo {
@@ -234,9 +306,17 @@
   color: #2d3748;
 }
 
+[data-theme='dark'] .playlistItemTitle {
+  color: #f7fafc;
+}
+
 .playlistItemArtist {
   font-size: 0.75rem;
   color: #718096;
+}
+
+[data-theme='dark'] .playlistItemArtist {
+  color: #a0aec0;
 }
 
 .playlistItemDuration {
@@ -244,6 +324,10 @@
   color: #718096;
   min-width: 50px;
   text-align: right;
+}
+
+[data-theme='dark'] .playlistItemDuration {
+  color: #a0aec0;
 }
 
 .playingIndicator {
@@ -263,12 +347,12 @@
 
 @media (max-width: 768px) {
   .radioPlayer {
-    padding: 12px 16px;
+    padding: 8px 12px;
   }
 
   .playerContent {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .trackInfo {
@@ -277,62 +361,34 @@
   }
 
   .nowPlayingLabel {
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
   }
 
   .trackTitle {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
   }
 
   .trackArtist {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
   }
 
   .progressSection {
     width: 100%;
-    gap: 8px;
+    gap: 6px;
   }
 
   .timeDisplay {
-    font-size: 0.6875rem;
-    min-width: 35px;
+    font-size: 0.625rem;
+    min-width: 32px;
   }
 
   .progressBar {
-    height: 4px;
+    height: 3px;
   }
 
   .playerControls {
     justify-content: center;
-    gap: 6px;
-  }
-
-  .controlButton,
-  .playButton {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-
-  .playButton {
-    width: 44px;
-    height: 44px;
-    font-size: 1.25rem;
-  }
-
-  .playlistButton {
-    padding: 6px 12px;
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .radioPlayer {
-    padding: 10px 12px;
-  }
-
-  .playerContent {
-    gap: 10px;
+    gap: 4px;
   }
 
   .controlButton,
@@ -343,9 +399,73 @@
   }
 
   .playButton {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     font-size: 1.125rem;
+  }
+
+  .playlistButton {
+    padding: 5px 10px;
+    font-size: 0.6875rem;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .radioPlayer {
+    padding: 6px 10px;
+  }
+
+  .playerContent {
+    gap: 6px;
+  }
+
+  .nowPlayingLabel {
+    font-size: 0.5625rem;
+  }
+
+  .trackTitle {
+    font-size: 0.75rem;
+  }
+
+  .trackArtist {
+    font-size: 0.625rem;
+  }
+
+  .progressSection {
+    gap: 4px;
+  }
+
+  .timeDisplay {
+    font-size: 0.5625rem;
+    min-width: 28px;
+  }
+
+  .progressBar {
+    height: 2px;
+  }
+
+  .playerControls {
+    gap: 3px;
+  }
+
+  .controlButton,
+  .playButton {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  .playButton {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .playlistButton {
+    padding: 4px 8px;
+    font-size: 0.625rem;
+    margin-top: 3px;
   }
 }
 

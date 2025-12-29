@@ -127,47 +127,69 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 12px;
+    padding: 8px;
   }
 
-  .loginCard {
-    padding: 32px 24px;
-    border-radius: 16px;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .form {
-    gap: 20px;
-  }
-
-  .input {
-    padding: 12px 14px;
-    font-size: 16px; /* Prevents zoom on iOS */
-  }
-
-  .submitButton {
-    padding: 14px 24px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
   .loginCard {
     padding: 24px 20px;
+    border-radius: 12px;
   }
 
   .title {
     font-size: 1.75rem;
+    margin-bottom: 8px;
   }
 
   .subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 24px;
+  }
+
+  .form {
+    gap: 16px;
+  }
+
+  .input {
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .submitButton {
+    padding: 12px 24px;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 6px;
+  }
+
+  .loginCard {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 0.8125rem;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    gap: 14px;
+  }
+
+  .input {
+    padding: 10px 12px;
+  }
+
+  .submitButton {
+    padding: 10px 20px;
     font-size: 0.875rem;
   }
 }

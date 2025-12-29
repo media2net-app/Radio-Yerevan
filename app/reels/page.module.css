@@ -338,108 +338,136 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 12px;
+    padding: 8px;
   }
 
   .content {
-    padding: 24px 16px;
-    border-radius: 16px;
+    padding: 16px 12px;
+    border-radius: 12px;
   }
 
   .header {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 
   .headerTop {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .headerActions {
     flex-direction: column;
     width: 100%;
-    gap: 8px;
-  }
-
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 0.875rem;
-  }
-
-  .backButton,
-  .logoutButton {
-    width: 100%;
-  }
-
-  .generateSection {
-    padding: 24px;
-    margin-bottom: 32px;
-  }
-
-  .sectionTitle {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-  }
-
-  .generateForm {
-    gap: 16px;
-  }
-
-  .generateButton {
-    width: 100%;
-    padding: 14px 24px;
-    font-size: 1rem;
-  }
-
-  .reelsSection {
-    margin-top: 32px;
-  }
-
-  .reelsGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .reelCard {
-    padding: 20px;
-  }
-
-  .reelVideoContainer {
-    margin: 12px 0;
-  }
-
-  .reelVideo {
-    max-height: 400px;
-  }
-
-  .reelActions {
-    flex-direction: column;
-  }
-
-  .downloadButton,
-  .shareButton {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    padding: 20px 12px;
+    gap: 6px;
   }
 
   .title {
     font-size: 1.5rem;
   }
 
+  .subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .backButton,
+  .logoutButton {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+
   .generateSection {
-    padding: 20px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 1.125rem;
+    margin-bottom: 12px;
+  }
+
+  .generateForm {
+    gap: 12px;
+  }
+
+  .generateButton {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+
+  .reelsSection {
+    margin-top: 20px;
+  }
+
+  .reelsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .reelCard {
     padding: 16px;
+  }
+
+  .reelVideoContainer {
+    margin: 10px 0;
+  }
+
+  .reelVideo {
+    max-height: 300px;
+  }
+
+  .reelActions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .downloadButton,
+  .shareButton {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 6px;
+  }
+
+  .content {
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+
+  .generateSection {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .reelCard {
+    padding: 12px;
+  }
+
+  .reelVideo {
+    max-height: 250px;
   }
 }
 
