@@ -8,7 +8,7 @@ export interface NewsItem {
   url: string;
   hasVideo?: boolean;
   isExclusive?: boolean;
-  time?: string; // For "Net binnen" section
+  time?: string; // For "Tocmai sosit" section
 }
 
 export const newsItems: NewsItem[] = [

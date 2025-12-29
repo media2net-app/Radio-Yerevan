@@ -3,8 +3,8 @@ import './globals.css';
 import { Providers } from '@/components/Providers';
 
 export const metadata: Metadata = {
-  title: 'Radio Yerevan - Întrebare și Răspuns',
-  description: 'Descoperă glumele clasice Radio Yerevan din perioada sovietică',
+  title: 'Radio Erevan - Întrebare și Răspuns',
+  description: 'Descoperă glumele clasice Radio Erevan din perioada sovietică',
 };
 
 export const viewport: Viewport = {

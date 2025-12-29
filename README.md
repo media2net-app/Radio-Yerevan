@@ -1,14 +1,14 @@
-# Radio Yerevan
+# Radio Erevan
 
-Een moderne Next.js applicatie om klassieke Radio Yerevan grappen te bekijken, met nieuws, reels generatie en een volledig geoptimaliseerde mobile layout.
+Een moderne Next.js applicatie om klassieke Radio Erevan grappen te bekijken, met nieuws, reels generatie en een volledig geoptimaliseerde mobile layout.
 
-## Over Radio Yerevan
+## Over Radio Erevan
 
-Radio Yerevan-grappen waren populaire vraag-en-antwoord moppen die ontstonden in de Sovjet-Unie en andere Oostbloklanden tijdens de tweede helft van de 20e eeuw. Deze grappen volgden een vast patroon: een luisteraar stelde een vraag aan Radio Yerevan, en het station gaf een gevat antwoord dat vaak de tekortkomingen van het communistische regime belichtte.
+Radio Erevan-grappen waren populaire vraag-en-antwoord moppen die ontstonden in de Sovjet-Unie en andere Oostbloklanden tijdens de tweede helft van de 20e eeuw. Deze grappen volgden een vast patroon: een luisteraar stelde een vraag aan Radio Erevan, en het station gaf een gevat antwoord dat vaak de tekortkomingen van het communistische regime belichtte.
 
 ## Features
 
-- 🎭 **Radio Yerevan Jokes**: Bekijk klassieke vraag-en-antwoord grappen één voor één
+- 🎭 **Radio Erevan Jokes**: Bekijk klassieke vraag-en-antwoord grappen één voor één
 - 📰 **Nieuws Sectie**: Laatste nieuws uit Roemenië met verschillende categorieën
 - 🎬 **Reels Generatie**: Genereer social media reels met AI (simulatie)
 - 🎵 **Radio Player**: Live radio player met playlist en sticky header
@@ -64,7 +64,7 @@ radio-yerevan/
 │   ├── AuthContext.tsx   # Authenticatie context
 │   └── ThemeContext.tsx  # Theme context
 ├── data/                 # Data bestanden
-│   ├── jokes.ts          # Radio Yerevan jokes
+│   ├── jokes.ts          # Radio Erevan jokes
 │   ├── news.ts           # Nieuws items
 │   └── playlist.ts       # Radio playlist
 └── types/                # TypeScript types
@@ -87,6 +87,38 @@ De applicatie is volledig geoptimaliseerd voor mobile apparaten met:
 - Geoptimaliseerde font sizes en spacing
 - Volledige breedte layouts op mobile
 - Viewport meta tags voor correcte scaling
+
+## Deployment
+
+### Vercel (Aanbevolen)
+
+1. **Deploy via Vercel CLI**:
+   ```bash
+   vercel
+   ```
+   
+   Volg de instructies om:
+   - Je Vercel account te linken (of maak er een aan)
+   - Het project te deployen
+   - Een custom domain toe te voegen (optioneel)
+
+2. **Of via Vercel Website**:
+   - Ga naar [vercel.com](https://vercel.com)
+   - Klik op "New Project"
+   - Import je GitHub repository
+   - Vercel detecteert automatisch Next.js en configureert alles
+   - Klik op "Deploy"
+
+3. **Environment Variables**:
+   - Geen environment variables nodig voor deze applicatie
+
+### Productie Build
+
+De applicatie is klaar voor productie:
+```bash
+npm run build  # Build succesvol ✓
+npm start      # Start productie server
+```
 
 ## Licentie
 

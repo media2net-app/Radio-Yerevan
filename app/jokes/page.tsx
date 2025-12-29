@@ -40,7 +40,7 @@ export default function JokesPage() {
         <header className={styles.header}>
           <div className={styles.headerTop}>
             <div>
-              <h1 className={styles.title}>Radio Yerevan</h1>
+              <h1 className={styles.title}>Radio Erevan</h1>
               <p className={styles.subtitle}>Întrebare și Răspuns</p>
             </div>
             <div className={styles.headerActions}>

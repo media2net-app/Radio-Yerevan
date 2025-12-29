@@ -43,7 +43,7 @@ export default function Dashboard() {
           <div className={styles.headerTop}>
             <div>
               <h1 className={styles.title}>Dashboard</h1>
-              <p className={styles.subtitle}>Radio Yerevan - Panou de control</p>
+              <p className={styles.subtitle}>Radio Erevan - Panou de control</p>
             </div>
             <button onClick={logout} className={styles.logoutButton}>
               Ieșire
@@ -92,7 +92,7 @@ export default function Dashboard() {
               </div>
             </div>
             <p className={styles.sectionDescription}>
-              Vezi și gestionează toate glumele Radio Yerevan disponibile
+              Vezi și gestionează toate glumele Radio Erevan disponibile
             </p>
             <Link href="/jokes" className={styles.sectionButton}>
               Vezi glume →

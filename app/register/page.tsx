@@ -6,42 +6,49 @@ import { useAuth } from '@/contexts/AuthContext';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const { login } = useAuth();
+  const { register } = useAuth();
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
-    if (!username || !password) {
+    if (!username || !email || !password || !confirmPassword) {
       setError('Vă rugăm să completați toate câmpurile');
       return;
     }
 
-    const success = login(username, password);
-    if (success) {
-      router.push('/dashboard');
+    if (password !== confirmPassword) {
+      setError('Parolele nu se potrivesc');
+      return;
+    }
+
+    const result = register(username, email, password);
+    if (result.success) {
+      router.push('/');
     } else {
-      setError('Autentificare eșuată');
+      setError(result.error || 'Înregistrare eșuată');
     }
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.loginCard}>
+      <div className={styles.registerCard}>
         <header className={styles.header}>
           <h1 className={styles.title}>Radio Erevan</h1>
-          <p className={styles.subtitle}>Autentificare</p>
+          <p className={styles.subtitle}>Înregistrare</p>
         </header>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.inputGroup}>
             <label htmlFor="username" className={styles.label}>
-              Utilizator
+              Nume de utilizator
             </label>
             <input
               id="username"
@@ -55,6 +62,21 @@ export default function LoginPage() {
           </div>
 
           <div className={styles.inputGroup}>
+            <label htmlFor="email" className={styles.label}>
+              Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={styles.input}
+              placeholder="Introduceți adresa de email"
+              autoComplete="email"
+            />
+          </div>
+
+          <div className={styles.inputGroup}>
             <label htmlFor="password" className={styles.label}>
               Parolă
             </label>
@@ -64,19 +86,34 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={styles.input}
-              placeholder="Introduceți parola"
-              autoComplete="current-password"
+              placeholder="Minim 6 caractere"
+              autoComplete="new-password"
+            />
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label htmlFor="confirmPassword" className={styles.label}>
+              Confirmă parola
+            </label>
+            <input
+              id="confirmPassword"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className={styles.input}
+              placeholder="Confirmați parola"
+              autoComplete="new-password"
             />
           </div>
 
           {error && <div className={styles.error}>{error}</div>}
 
           <button type="submit" className={styles.submitButton}>
-            Autentificare
+            Înregistrare
           </button>
 
           <p className={styles.loginLink}>
-            Nu ai cont? <Link href="/register">Înregistrează-te</Link>
+            Ai deja cont? <Link href="/login">Autentifică-te</Link>
           </p>
         </form>
       </div>
