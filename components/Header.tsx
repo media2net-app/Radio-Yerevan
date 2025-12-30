@@ -243,9 +243,12 @@ export default function Header() {
     audio.pause();
     setError(null);
     
-    // Set new source
-    audio.src = trackUrl;
+    // Set new source - use absolute URL to ensure correct path
+    const absoluteUrl = trackUrl.startsWith('/') ? trackUrl : `/${trackUrl}`;
+    audio.src = absoluteUrl;
     audio.load();
+    
+    console.log('Loading track:', absoluteUrl, 'Current track index:', currentTrackIndex);
     
     // Auto-play when track changes if user has interacted
     if (shouldAutoPlay) {
@@ -253,10 +256,21 @@ export default function Header() {
         try {
           // Double check audio is still the current track and hasn't changed
           const currentAudio = audioRef.current;
-          if (currentAudio && currentAudio.src && currentAudio.src.includes(trackUrl.split('/').pop() || '')) {
+          const expectedUrl = absoluteUrl;
+          const currentSrc = currentAudio?.src || '';
+          
+          // Check if the audio source matches (handle both relative and absolute URLs)
+          const srcMatches = currentSrc.includes(trackUrl.split('/').pop() || '') || 
+                           currentSrc.endsWith(expectedUrl) ||
+                           currentSrc.includes(expectedUrl);
+          
+          if (currentAudio && srcMatches) {
+            console.log('Playing track:', expectedUrl);
             await currentAudio.play();
             setIsPlaying(true);
             setError(null);
+          } else {
+            console.warn('Audio source mismatch. Expected:', expectedUrl, 'Got:', currentSrc);
           }
         } catch (error) {
           console.error('Error playing audio after track change:', error);
@@ -268,26 +282,28 @@ export default function Header() {
       // Wait for audio to be ready
       const handleReady = () => {
         // Use a small delay to ensure audio is fully ready
-        setTimeout(playAudio, 300);
+        setTimeout(playAudio, 400);
       };
       
       const handleError = (e: Event) => {
         console.error('Audio load error for track:', trackUrl, e);
-        setError('Nu se poate încărca track-ul. Verifică fișierul.');
+        setError(`Nu se poate încărca track-ul: ${trackUrl}`);
       };
       
       audio.addEventListener('canplay', handleReady, { once: true });
       audio.addEventListener('loadeddata', handleReady, { once: true });
+      audio.addEventListener('canplaythrough', handleReady, { once: true });
       audio.addEventListener('error', handleError, { once: true });
       
       // Also try immediately if already ready
       if (audio.readyState >= 3) {
-        setTimeout(playAudio, 300);
+        setTimeout(playAudio, 400);
       }
       
       return () => {
         audio.removeEventListener('canplay', handleReady);
         audio.removeEventListener('loadeddata', handleReady);
+        audio.removeEventListener('canplaythrough', handleReady);
         audio.removeEventListener('error', handleError);
       };
     } else {
