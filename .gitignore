@@ -34,3 +34,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# audio files - now included in git for deployment
+# /public/audio/*.mp3
+!/public/audio/README.md
+

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import Link from 'next/link';
+import { Radio } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function RegisterPage() {
@@ -39,10 +40,16 @@ export default function RegisterPage() {
 
   return (
     <div className={styles.container}>
+      {/* Logo */}
+      <Link href="/" className={styles.logo}>
+        <Radio size={40} />
+        <span className={styles.logoText}>Radio Erevan</span>
+      </Link>
+      
       <div className={styles.registerCard}>
         <header className={styles.header}>
-          <h1 className={styles.title}>Radio Erevan</h1>
-          <p className={styles.subtitle}>Înregistrare</p>
+          <h1 className={styles.title}>Înregistrare</h1>
+          <p className={styles.subtitle}>Creează un cont nou</p>
         </header>
 
         <form onSubmit={handleSubmit} className={styles.form}>

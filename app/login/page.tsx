@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import Link from 'next/link';
+import { Radio } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function LoginPage() {
@@ -32,10 +33,16 @@ export default function LoginPage() {
 
   return (
     <div className={styles.container}>
+      {/* Logo */}
+      <Link href="/" className={styles.logo}>
+        <Radio size={40} />
+        <span className={styles.logoText}>Radio Erevan</span>
+      </Link>
+      
       <div className={styles.loginCard}>
         <header className={styles.header}>
-          <h1 className={styles.title}>Radio Erevan</h1>
-          <p className={styles.subtitle}>Autentificare</p>
+          <h1 className={styles.title}>Autentificare</h1>
+          <p className={styles.subtitle}>Conectează-te la contul tău</p>
         </header>
 
         <form onSubmit={handleSubmit} className={styles.form}>
